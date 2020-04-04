@@ -1,6 +1,3 @@
-I have been really bored by the amount of boilerplate code we must write and the ceremonies that we must abide by to write simple unit test code for JavaScript programs. Life shouldn't be that hard. Think about clogging your `node_modules` with arbitrary number of test libraries and their dependencies. Therefore, I wrote a small set of classes in a single file that you can drop in your project and start testing your JavaScript programs. No strings attached.
-
-```javascript
 // Problem description: find the integer that appears only once in a list in linear time while others appear exactly twice.
 
 const { TestFunc, Mock } = require("./simplytest");
@@ -18,7 +15,7 @@ new TestFunc(xor, "xor()")
 
 // Compute: O(2n), Space: O(2n)
 const sumBased = (sum, nums) => {
-  // Note that the sum function is actually called twice.
+	// Note that the sum function is actually called twice.
   return 2 * sum(Array.from(new Set(nums))) - sum(nums);
 }
 
@@ -33,8 +30,3 @@ new TestFunc(sumBased, "sumBased()")
   .useMock(mockedSum)
   .case("should find the number when in the beginning", () => sumBased(mockedSum.instance, [4,1,2,1,2]) === 4)
   .run();
-```
-
-Clone the repository and lets run it. Execute `npm test` or `node index.js`. Here is the output you may expect:
-
-

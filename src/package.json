@@ -1,0 +1,11 @@
+{
+  "name": "simplytest",
+  "version": "0.1.0",
+  "description": "Tired of so much ceremonies while testing a small piece of JavaScript code",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Tanzim Saqib",
+  "license": "MIT"
+}
