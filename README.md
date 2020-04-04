@@ -29,9 +29,10 @@ const sum = (nums) => {
 };
 
 // mock the 'sum' function, return 10 and verify it was run 1-time
-const mockedSum = new Mock(sum, 1, 10, [4,1,2,1]);
+// and expect it to be called with [4,1,2,1]
+const mockedSum = new Mock(sum, 1, 10, [4,1,2,1]);	// arbitrary number of parameters
 new TestFunc(sumBased, "sumBased()")
-  .useMock(mockedSum)
+  .useMocks(mockedSum)	// inject arbitrary number of mocks here
   .case("should find the number when in the beginning", () => sumBased(mockedSum.instance, [4,1,2,1,2]) === 4)
   .run();
 ```

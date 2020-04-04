@@ -24,20 +24,25 @@ SOFTWARE.
 
 class TestFunc {
   constructor(fn, fname) {
-  this.fn = fn;
-  this.fname = fname;
-  this.cases = [];
-  this.mocks = [];
-  return this;
-}
-
-useMock(mocked) {
-  if (mocked instanceof Mock) {
-    this.mocks.push(mocked);
+    this.fn = fn;
+    this.fname = fname;
+    this.cases = [];
+    this.mocks = [];
     return this;
   }
 
-  throw Error('Unrecognized mock supplied.');
+useMocks(...mocked) {
+  mocked.forEach(m => {
+    if (m instanceof Mock) {
+      if (this.mocks.filter(mock => mock.name === m.name).length > 0) {
+        throw Error('Cannot register mocks with the same function name.');
+      }
+      this.mocks.push(m);
+    } else {
+      throw Error('Unrecognized mock supplied.');
+    }
+  })
+  return this;
 }
 
 case(title, parameters, expected) {
