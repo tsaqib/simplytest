@@ -37,4 +37,4 @@ new TestFunc(sumBased, "sumBased()")
 
 Clone the repository and lets run it. Execute `npm test` or `node index.js`. Here is the output you may expect:
 
-
+![Output](https://raw.githubusercontent.com/tsaqib/simplytest/master/images/screenshot.png)
