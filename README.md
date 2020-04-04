@@ -1,7 +1,8 @@
 I have been really bored by the amount of boilerplate code we must write and the ceremonies that we must abide by to write simple unit test code for JavaScript programs. Life shouldn't be that hard. Think about clogging your `node_modules` with arbitrary number of test libraries and their dependencies. Therefore, I wrote a small set of classes in a single file that you can drop in your project and start testing your JavaScript programs. No strings attached.
 
 ```javascript
-// Problem description: find the integer that appears only once in a list in linear time while others appear exactly twice.
+// Problem description: find the integer that appears only once in a list in linear time 
+// while others appear exactly twice.
 
 const { TestFunc, Mock } = require("./simplytest");
 

@@ -1,4 +1,5 @@
-// Problem description: find the integer that appears only once in a list in linear time while others appear exactly twice.
+// Problem description: find the integer that appears only once in a list in linear time 
+// while others appear exactly twice.
 
 const { TestFunc, Mock } = require("./simplytest");
 
